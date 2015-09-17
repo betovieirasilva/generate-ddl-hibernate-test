@@ -4,6 +4,7 @@ import com.beto.ddl.test.model.Estado;
 import com.beto.ddl.test.model.Municipio;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.dialect.Dialect;
+import org.hibernate.engine.jdbc.internal.FormatStyle;
 
 public class GenerateSchema {
     
@@ -15,12 +16,13 @@ public class GenerateSchema {
     }
 
     public void generate() {
+        
         Configuration conf = createHibernateConfig();
         
         System.out.println("--------");
         String scripts[] = conf.generateSchemaCreationScript(DIALECT_MYSQL);
         for(String script : scripts) {
-            System.out.println(script);
+            System.out.println(FormatStyle.DDL.getFormatter().format(script));
         }
         System.out.println("--------");
     }
