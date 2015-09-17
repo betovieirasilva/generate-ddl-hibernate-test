@@ -2,10 +2,6 @@
 	<persistence-unit-metadata>
 		<persistence-unit-defaults>
 			<entity-listeners>
-				<entity-listener class="com.frameworkcrusader.model.auditoria.AuditListener">
-					<pre-persist method-name="preCreate"></pre-persist>
-					<pre-update method-name="preUpdate"></pre-update>
-				</entity-listener>
 			</entity-listeners>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
